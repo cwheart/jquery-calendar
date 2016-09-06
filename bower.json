@@ -1,0 +1,25 @@
+{
+  "name": "jquery-calendar",
+  "homepage": "http://www.xinshuaifeng.com/",
+  "authors": [
+    "xinshuaifeng<xinshuaifeng@126.com>"
+  ],
+  "description": "Calendar For JQuery",
+  "main": "",
+  "keywords": [
+    "JQuery",
+    "Calendar"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.7"
+  }
+}
