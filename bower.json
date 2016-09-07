@@ -5,7 +5,10 @@
     "xinshuaifeng<xinshuaifeng@126.com>"
   ],
   "description": "Calendar For JQuery",
-  "main": "",
+  "main": [
+    "./js/jquery-calendar.js",
+    "./css/jquery-calendar.css"
+  ],
   "keywords": [
     "JQuery",
     "Calendar"
@@ -15,6 +18,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "components",
     "test",
     "tests"
   ],
