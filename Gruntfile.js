@@ -67,6 +67,30 @@ module.exports = function(grunt) {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'qunit']
       }
+    },
+    bower: {
+      install: {
+        options: {
+          targetDir: './dist',
+          layout: 'byType',
+          install: true,
+          verbose: false,
+          prune: false,
+          cleanTargetDir: false,
+          cleanBowerDir: false,
+          bowerOptions: {}
+        }
+      }
+    },
+    coffee: {
+      compile: {
+        options: {
+          bare: true
+        },
+        files: {
+          'src/js/jquery-calendar.js': 'src/coffee/jquery-calendar.coffee' // 1:1 compile
+        }
+      }
     }
   });
 
@@ -76,6 +100,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
