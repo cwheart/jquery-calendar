@@ -1,11 +1,13 @@
 # jquery-calendar
 
 ## Install
-`bower install git@github.com:cwheart/jquery-calendar.git`
+```shell
+bower install git@github.com:cwheart/jquery-calendar.git
+```
 
 ## USAGE
 
-```
+```html
 <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="./bower_components/jquery-calendar/dist/css/jquery-calendar.min.css">
