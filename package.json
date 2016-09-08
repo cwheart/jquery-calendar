@@ -1,15 +1,35 @@
 {
-  "engines": {
-    "node": ">= 0.10.0"
-  },
+  "name": "jquery-calendar",
+  "version": "0.1.0",
+  "description": "Calendar For JQuery",
+  "main": "Gruntfile.js",
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-bower-task": "^0.4.0",
     "grunt-contrib-coffee": "^1.0.0",
     "grunt-contrib-concat": "~0.4.0",
     "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "^1.4.0",
     "grunt-contrib-qunit": "~0.5.2",
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-contrib-watch": "~0.6.1"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwheart/jquery-calendar.git"
+  },
+  "keywords": [
+    "JQuery",
+    "Calendar"
+  ],
+  "author": "xinshuaifeng <xinshuaifeng@126.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwheart/jquery-calendar/issues"
+  },
+  "homepage": "https://github.com/cwheart/jquery-calendar#readme"
 }

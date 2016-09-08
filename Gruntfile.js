@@ -17,7 +17,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/<%= pkg.name %>.js'],
+        src: ['src/js/<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -91,6 +91,16 @@ module.exports = function(grunt) {
           'src/js/jquery-calendar.js': 'src/coffee/jquery-calendar.coffee' // 1:1 compile
         }
       }
+    },
+    less: {
+      development: {
+        options: {
+          paths: ['src/css']
+        },
+        files: {
+          'src/css/calendar.css': 'src/less/calendar.less'
+        }
+      }
     }
   });
 
@@ -102,6 +112,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
