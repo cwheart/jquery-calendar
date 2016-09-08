@@ -57,7 +57,7 @@
     };
     this.drawNav = function() {
       $(this.nav).empty();
-      return $(this.nav).append("<h1><span class=\"prevMonth\">&lt;</span><span class=\"nextMonth\">&gt;</span></h1>");
+      return $(this.nav).append("<h1><span class=\"prevMonth\"><a src=\"javascript:void(0);\">&lt;</a></span><span class=\"nextMonth\"><a src=\"javascript:void(0);\">&gt;</a></span></h1>");
     };
     this.selectDate = function(selectedDate) {
       var date;

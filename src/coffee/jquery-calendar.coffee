@@ -40,7 +40,7 @@
     # 绘制导航
     this.drawNav = ->
       $(this.nav).empty()
-      $(this.nav).append("<h1><span class=\"prevMonth\">&lt;</span><span class=\"nextMonth\">&gt;</span></h1>")
+      $(this.nav).append("<h1><span class=\"prevMonth\"><a src=\"javascript:void(0);\">&lt;</a></span><span class=\"nextMonth\"><a src=\"javascript:void(0);\">&gt;</a></span></h1>")
       
     # 选择日期
     # date like '2015-11-11'
