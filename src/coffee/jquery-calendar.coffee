@@ -9,7 +9,7 @@
     this.title = $(this).find(".calendar-title")
     this.days = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
     this.getDayStr = (day)->
-      day = 6 if day == 0
+      day = 7 if day == 0
       this.days[day - 1]
 
     obj = this

@@ -10,7 +10,7 @@
     this.days = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"];
     this.getDayStr = function(day) {
       if (day === 0) {
-        day = 6;
+        day = 7;
       }
       return this.days[day - 1];
     };
@@ -55,9 +55,6 @@
         day = $("<div class=\"cal-cell\"></div>");
         if (tmp.toDateString() === this.initDate.toDateString()) {
           day.addClass("current");
-        }
-        if (tmp.toDateString() === this.initDate.toDateString()) {
-          console.log("currrrrrrrent");
         }
         day.append("<a data-date=\"" + tmp.toDateString() + "\" class=\"day-cell\" href=\"javascript:void(0);\">" + tmp.getDate(+"</a>"));
         $(this.dayList).append(day);
