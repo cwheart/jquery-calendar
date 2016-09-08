@@ -127,7 +127,6 @@ module.exports = function(grunt) {
     scope: 'devDependencies'
   });
 
-
   grunt.registerTask('build-js', ['coffee', 'concat', 'uglify']);
   grunt.registerTask('build-css', ['less', 'cssmin']);
 
