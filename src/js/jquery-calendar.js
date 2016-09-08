@@ -3,8 +3,9 @@
   return $.fn.calendar = function(options) {
     this.initDate = new Date();
     this.element = $(this);
-    this.dayList = $(this).find(".list");
-    this.nav = $(this).find(".nav");
+    this.dayList = $(this).find(".calendar-list");
+    this.nav = $(this).find(".calendar-nav");
+    this.title = $(this).find(".calendar-title");
     this.nextMonth = function() {
       this.initDate.setMonth(this.initDate.getMonth() + 1);
       return this.draw();
@@ -14,11 +15,20 @@
       return this.draw();
     };
     this.draw = function() {
+      this.drawTitle();
       this.drawNav();
       return this.drawList();
     };
     this.drawTitle = function() {
-      return console.log("Draw Title");
+      var day, i, len, ref, results;
+      $(this.title).empty();
+      ref = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"];
+      results = [];
+      for (i = 0, len = ref.length; i < len; i++) {
+        day = ref[i];
+        results.push($(this.title).append("<div>" + day + "</div>"));
+      }
+      return results;
     };
     this.drawList = function() {
       var day, results, tmp;
@@ -33,7 +43,7 @@
       results = [];
       while (1) {
         tmp.setDate(tmp.getDate() + 1);
-        $(this.dayList).append("<div>" + tmp.getDate(+"</div>"));
+        $(this.dayList).append("<div class=\"cal-cell\">" + tmp.getDate(+"</div>"));
         if (tmp.getMonth() > this.initDate.getMonth() && tmp.getDay() === 0) {
           break;
         } else {
@@ -43,7 +53,8 @@
       return results;
     };
     this.drawNav = function() {
-      return console.log("Hehehe......");
+      $(this.nav).empty();
+      return $(this.nav).append("<h1><span class=\"prevMonth\">&lt;</span><span class=\"nextMonth\">&gt;</span></h1>");
     };
     this.selectDate = function(selectedDate) {
       var date;

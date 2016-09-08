@@ -1,0 +1,30 @@
+@base-gray: #E4E4E4;
+@light-gray: #F2F2F2;
+@base-width: 1;
+@cell-width: @base-width/7;
+.calendar {
+  background-color: @base-gray;
+  .calendar-body {
+    background-color: @light-gray;
+    padding: 0;
+    .calendar-title {
+      height: 30px;
+      div {
+        position: relative;
+        float: left;
+        width: percentage(0.1428571428571);
+        text-align: center;
+      }
+    }
+    .calendar-list {
+      min-height: 100px;
+      .cal-cell {
+        position: relative;
+        float: left;
+        width: percentage(0.1428571428571);
+        text-align: center;
+        height: 40px;
+      }
+    }
+  }
+}
