@@ -4,11 +4,13 @@
 "use strict";
 (function($) {
   return $.fn.calendar = function(options) {
+    var obj;
     this.initDate = new Date();
     this.element = $(this);
     this.dayList = $(this).find(".calendar-list");
     this.nav = $(this).find(".calendar-nav");
     this.title = $(this).find(".calendar-title");
+    obj = this;
     this.nextMonth = function() {
       this.initDate.setMonth(this.initDate.getMonth() + 1);
       return this.draw();
@@ -69,11 +71,11 @@
     };
     this.draw();
     $(this).on("click", ".nextMonth", function() {
-      return this.nextMonth();
+      return obj.nextMonth();
     });
     $(this).on("click", ".prevMonth", function() {
-      return this.prevMonth();
+      return obj.prevMonth();
     });
-    return this;
+    return obj;
   };
 })(jQuery);

@@ -7,6 +7,7 @@
     this.dayList = $(this).find(".calendar-list")
     this.nav = $(this).find(".calendar-nav")
     this.title = $(this).find(".calendar-title")
+    obj = this
     this.nextMonth = ->
       this.initDate.setMonth(this.initDate.getMonth() + 1)
       this.draw()
@@ -51,8 +52,8 @@
 
     this.draw()
     $(this).on "click", ".nextMonth", ->
-      this.nextMonth()
+      obj.nextMonth()
     $(this).on "click", ".prevMonth", ->
-      this.prevMonth()
-    this
+      obj.prevMonth()
+    obj
 )(jQuery)
