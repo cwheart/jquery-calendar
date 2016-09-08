@@ -35,7 +35,8 @@
       while 1
         tmp.setDate(tmp.getDate() + 1)
         $(this.dayList).append("<div class=\"cal-cell\">"+ tmp.getDate +"</div>")
-        break if tmp.getMonth() > this.initDate.getMonth() && tmp.getDay() == 0
+        console.log(tmp.toDateString())
+        break if (tmp.getFullYear() > this.initDate.getFullYear() || tmp.getMonth() > this.initDate.getMonth()) && tmp.getDay() == 0
     # 绘制导航
     this.drawNav = ->
       $(this.nav).empty()

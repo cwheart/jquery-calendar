@@ -46,7 +46,8 @@
       while (1) {
         tmp.setDate(tmp.getDate() + 1);
         $(this.dayList).append("<div class=\"cal-cell\">" + tmp.getDate(+"</div>"));
-        if (tmp.getMonth() > this.initDate.getMonth() && tmp.getDay() === 0) {
+        console.log(tmp.toDateString());
+        if ((tmp.getFullYear() > this.initDate.getFullYear() || tmp.getMonth() > this.initDate.getMonth()) && tmp.getDay() === 0) {
           break;
         } else {
           results.push(void 0);
