@@ -31,7 +31,9 @@ module.exports = function(grunt) {
       }
     },
     clean: {
+      less: 'src/css',
       css: 'dist/css',
+      coffee: 'src/js',
       js: 'dist/js',
     },
     jshint: {
@@ -106,7 +108,7 @@ module.exports = function(grunt) {
       },
       css: {
         src: 'src/less/calendar.less',
-        dest: 'dist/css/<%= pkg.name %>.css'
+        dest: 'src/css/<%= pkg.name %>.css'
       }
     },
     cssmin: {
