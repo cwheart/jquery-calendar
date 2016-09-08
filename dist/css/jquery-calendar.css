@@ -24,4 +24,10 @@
   text-align: center;
   height: 40px;
 }
+.calendar .calendar-nav {
+  text-align: center;
+}
+.calendar .calendar-nav .selected-date {
+  font-size: 80px;
+}
 /*# sourceMappingURL=jquery-calendar.css.map */
