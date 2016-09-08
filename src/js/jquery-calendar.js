@@ -17,6 +17,9 @@
       this.drawNav();
       return this.drawList();
     };
+    this.drawTitle = function() {
+      return console.log("Draw Title");
+    };
     this.drawList = function() {
       var day, results, tmp;
       tmp = new Date(this.initDate);

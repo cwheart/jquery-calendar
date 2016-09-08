@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['src/js/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -27,8 +27,12 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        dest: 'dist/js/<%= pkg.name %>.min.js'
       }
+    },
+    clean: {
+      css: 'dist/css',
+      js: 'dist/js',
     },
     jshint: {
       options: {
@@ -93,28 +97,41 @@ module.exports = function(grunt) {
       }
     },
     less: {
-      development: {
-        options: {
-          paths: ['src/css']
-        },
-        files: {
-          'src/css/calendar.css': 'src/less/calendar.less'
-        }
+      options: {
+        strictMath: true,
+        sourceMap: true,
+        outputSourceFiles: true,
+        sourceMapURL: '<%= pkg.name %>.css.map',
+        sourceMapFilename: '<%= less.css.dest %>.map'
+      },
+      css: {
+        src: 'src/less/calendar.less',
+        dest: 'dist/css/<%= pkg.name %>.css'
+      }
+    },
+    cssmin: {
+      options: {
+        compatibility: 'ie8',
+        keepSpecialComments: '*',
+        advanced: false
+      },
+      css: {
+        src: '<%= less.css.dest %>',
+        dest: 'dist/css/<%= pkg.name %>.min.css'
       }
     }
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-bower-task');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  require('load-grunt-tasks')(grunt, {
+    scope: 'devDependencies'
+  });
+
+
+  grunt.registerTask('build-js', ['coffee', 'concat', 'uglify']);
+  grunt.registerTask('build-css', ['less', 'cssmin']);
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
+  grunt.registerTask('default', ['clean', 'build-js', 'build-css']);
 
 };
