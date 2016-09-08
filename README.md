@@ -1,5 +1,13 @@
 # jquery-calendar
 
+## Demo
+
+![Demo](https://github.com/cwheart/jquery-calendar/blob/master/images/20160908-182116_capture.gif)
+
+[[https://github.com/username/repository/blob/master/img/octocat.png|alt=octocat]]
+ Contact a human
+
+
 ## Install
 ```shell
 bower install git@github.com:cwheart/jquery-calendar.git
