@@ -1,5 +1,11 @@
 # jquery-calendar
 
+## Demo
+
+![Demo](https://github.com/cwheart/jquery-calendar/blob/master/images/20160908-182116_capture.gif)
+
+
+
 ## Install
 ```shell
 bower install git@github.com:cwheart/jquery-calendar.git
