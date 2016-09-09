@@ -1,4 +1,4 @@
-/*! jquery-calendar - v0.1.0 - 2016-09-08
+/*! jquery-calendar - v0.1.0 - 2016-09-09
 * https://github.com/cwheart/jquery-calendar#readme
 * Copyright (c) 2016 ; Licensed  */
 "use strict";

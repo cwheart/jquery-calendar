@@ -1,7 +1,7 @@
 @base-gray: #E4E4E4;
 @light-gray: #F2F2F2;
 @base-width: 1;
-@cell-width: @base-width/7;
+@cell-width: (@base-width / 7);
 .calendar.row {
   margin: 0px;
 }
@@ -15,7 +15,7 @@
       div {
         position: relative;
         float: left;
-        width: percentage(0.1428571428571);
+        width: percentage(@cell-width);
         text-align: center;
       }
     }
